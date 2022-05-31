@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>react hooks中主要的API使用 | 银河系小仙女的博客</title>
+    <meta name="generator" content="VuePress 1.5.4">
+    <link rel="icon" href="/hu-blog/avatar.png">
+    <meta name="description" content="欢迎来到我的博客~">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    <link rel="preload" href="/hu-blog/assets/css/0.styles.c9c547b8.css" as="style"><link rel="preload" href="/hu-blog/assets/js/app.b0c7be0c.js" as="script"><link rel="preload" href="/hu-blog/assets/js/3.f266843b.js" as="script"><link rel="preload" href="/hu-blog/assets/js/1.b0595a68.js" as="script"><link rel="preload" href="/hu-blog/assets/js/16.fb8a249e.js" as="script"><link rel="prefetch" href="/hu-blog/assets/js/10.a850a7fe.js"><link rel="prefetch" href="/hu-blog/assets/js/11.ed75528f.js"><link rel="prefetch" href="/hu-blog/assets/js/12.dbca3a6a.js"><link rel="prefetch" href="/hu-blog/assets/js/13.d88008dd.js"><link rel="prefetch" href="/hu-blog/assets/js/14.b2fe0e41.js"><link rel="prefetch" href="/hu-blog/assets/js/15.d7b4cef4.js"><link rel="prefetch" href="/hu-blog/assets/js/17.25a122c0.js"><link rel="prefetch" href="/hu-blog/assets/js/18.e96e4649.js"><link rel="prefetch" href="/hu-blog/assets/js/19.b770e4c4.js"><link rel="prefetch" href="/hu-blog/assets/js/20.c8a2a9ed.js"><link rel="prefetch" href="/hu-blog/assets/js/21.edf943fd.js"><link rel="prefetch" href="/hu-blog/assets/js/22.d0f5f49d.js"><link rel="prefetch" href="/hu-blog/assets/js/23.52b9afe7.js"><link rel="prefetch" href="/hu-blog/assets/js/24.cacd1b73.js"><link rel="prefetch" href="/hu-blog/assets/js/25.9b6ba6dc.js"><link rel="prefetch" href="/hu-blog/assets/js/26.9e2296f2.js"><link rel="prefetch" href="/hu-blog/assets/js/27.cd8b445e.js"><link rel="prefetch" href="/hu-blog/assets/js/28.5a6ff905.js"><link rel="prefetch" href="/hu-blog/assets/js/29.ef264e9e.js"><link rel="prefetch" href="/hu-blog/assets/js/30.1baaf0a7.js"><link rel="prefetch" href="/hu-blog/assets/js/31.5f8cb009.js"><link rel="prefetch" href="/hu-blog/assets/js/32.392ce629.js"><link rel="prefetch" href="/hu-blog/assets/js/33.aee9a053.js"><link rel="prefetch" href="/hu-blog/assets/js/34.46f640c4.js"><link rel="prefetch" href="/hu-blog/assets/js/35.d71f2585.js"><link rel="prefetch" href="/hu-blog/assets/js/36.cd95f373.js"><link rel="prefetch" href="/hu-blog/assets/js/37.667255ea.js"><link rel="prefetch" href="/hu-blog/assets/js/38.79157103.js"><link rel="prefetch" href="/hu-blog/assets/js/39.9910a37d.js"><link rel="prefetch" href="/hu-blog/assets/js/4.1c11a1b7.js"><link rel="prefetch" href="/hu-blog/assets/js/40.5d97c4e9.js"><link rel="prefetch" href="/hu-blog/assets/js/41.a491c0d7.js"><link rel="prefetch" href="/hu-blog/assets/js/42.4c1ab43b.js"><link rel="prefetch" href="/hu-blog/assets/js/43.2ab44d3e.js"><link rel="prefetch" href="/hu-blog/assets/js/44.245b6077.js"><link rel="prefetch" href="/hu-blog/assets/js/45.23096874.js"><link rel="prefetch" href="/hu-blog/assets/js/46.449ce78b.js"><link rel="prefetch" href="/hu-blog/assets/js/47.7b1c5f56.js"><link rel="prefetch" href="/hu-blog/assets/js/48.8e1bb5a7.js"><link rel="prefetch" href="/hu-blog/assets/js/49.bee0e339.js"><link rel="prefetch" href="/hu-blog/assets/js/5.042c8719.js"><link rel="prefetch" href="/hu-blog/assets/js/50.d9bda4b6.js"><link rel="prefetch" href="/hu-blog/assets/js/51.3360d877.js"><link rel="prefetch" href="/hu-blog/assets/js/52.ad63f355.js"><link rel="prefetch" href="/hu-blog/assets/js/6.594033ef.js"><link rel="prefetch" href="/hu-blog/assets/js/7.3d140258.js"><link rel="prefetch" href="/hu-blog/assets/js/8.73a3b83b.js"><link rel="prefetch" href="/hu-blog/assets/js/9.e5b46449.js">
+    <link rel="stylesheet" href="/hu-blog/assets/css/0.styles.c9c547b8.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container no-sidebar" data-v-0a66d9e0><div data-v-0a66d9e0><div id="loader-wrapper" class="loading-wrapper" data-v-d48f4d20 data-v-0a66d9e0 data-v-0a66d9e0><div class="loader-main" data-v-d48f4d20><div data-v-d48f4d20></div><div data-v-d48f4d20></div><div data-v-d48f4d20></div><div data-v-d48f4d20></div></div> <!----> <!----></div> <div class="password-shadow password-wrapper-out" style="display:none;" data-v-5cb9a64e data-v-0a66d9e0 data-v-0a66d9e0><h3 class="title" style="display:none;" data-v-5cb9a64e data-v-5cb9a64e>银河系小仙女的博客</h3> <!----> <label id="box" class="inputBox" style="display:none;" data-v-5cb9a64e data-v-5cb9a64e><input type="password" value="" data-v-5cb9a64e> <span data-v-5cb9a64e>Konck! Knock!</span> <button data-v-5cb9a64e>OK</button></label> <div class="footer" style="display:none;" data-v-5cb9a64e data-v-5cb9a64e><span data-v-5cb9a64e><i class="iconfont reco-theme" data-v-5cb9a64e></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-5cb9a64e>vuePress-theme-reco</a></span> <span data-v-5cb9a64e><i class="iconfont reco-copyright" data-v-5cb9a64e></i> <a data-v-5cb9a64e><span data-v-5cb9a64e>银河系小仙女</span>
+            
+          <span data-v-5cb9a64e>2017 - </span>
+          2021
+        </a></span></div></div> <div class="hide" data-v-0a66d9e0><header class="navbar" data-v-0a66d9e0><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/hu-blog/" class="home-link router-link-active"><!----> <span class="site-name">银河系小仙女的博客</span></a> <div class="links"><div class="color-picker"><a class="color-button"><i class="iconfont reco-color"></i></a> <div class="color-picker-menu" style="display:none;"><div class="mode-options"><h4 class="title">Choose mode</h4> <ul class="color-mode-options"><li class="dark">dark</li><li class="auto active">auto</li><li class="light">light</li></ul></div></div></div> <div class="search-box"><i class="iconfont reco-search"></i> <input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/hu-blog/" class="nav-link"><i class="iconfont reco-home"></i>
+  主页
+</a></div><div class="nav-item"><a href="/hu-blog/timeline/" class="nav-link"><i class="iconfont reco-date"></i>
+  时光轴
+</a></div><div class="nav-item"><a href="/hu-blog/tag/" class="nav-link"><i class="iconfont reco-tag"></i>
+  标签
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-message"></i>
+      分类
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/hu-blog/blogs/lifes/" class="nav-link"><i class="iconfont undefined"></i>
+  myLive
+</a></li><li class="dropdown-item"><!----> <a href="/hu-blog/blogs/前端笔记/" class="nav-link"><i class="iconfont undefined"></i>
+  web
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-message"></i>
+      关于
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://blog.csdn.net/weixin_44824839" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-csdn"></i>
+  CSDN
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="https://github.com/sunny-ali" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-github"></i>
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="https://gitee.com/maryu" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-mayun"></i>
+  码云
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask" data-v-0a66d9e0></div> <aside class="sidebar" data-v-0a66d9e0><div class="personal-info-wrapper" data-v-03833281 data-v-0a66d9e0><img src="/hu-blog/avatar.png" alt="author-avatar" class="personal-img" data-v-03833281> <h3 class="name" data-v-03833281>
+    银河系小仙女
+  </h3> <div class="num" data-v-03833281><div data-v-03833281><h3 data-v-03833281>37</h3> <h6 data-v-03833281>文章</h6></div> <div data-v-03833281><h3 data-v-03833281>13</h3> <h6 data-v-03833281>标签</h6></div></div> <hr data-v-03833281></div> <nav class="nav-links"><div class="nav-item"><a href="/hu-blog/" class="nav-link"><i class="iconfont reco-home"></i>
+  主页
+</a></div><div class="nav-item"><a href="/hu-blog/timeline/" class="nav-link"><i class="iconfont reco-date"></i>
+  时光轴
+</a></div><div class="nav-item"><a href="/hu-blog/tag/" class="nav-link"><i class="iconfont reco-tag"></i>
+  标签
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-message"></i>
+      分类
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/hu-blog/blogs/lifes/" class="nav-link"><i class="iconfont undefined"></i>
+  myLive
+</a></li><li class="dropdown-item"><!----> <a href="/hu-blog/blogs/前端笔记/" class="nav-link"><i class="iconfont undefined"></i>
+  web
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-message"></i>
+      关于
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://blog.csdn.net/weixin_44824839" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-csdn"></i>
+  CSDN
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="https://github.com/sunny-ali" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-github"></i>
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="https://gitee.com/maryu" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-mayun"></i>
+  码云
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></div></div> <!----></nav> <!----> </aside> <div class="password-shadow password-wrapper-in" style="display:none;" data-v-5cb9a64e data-v-0a66d9e0><h3 class="title" style="display:none;" data-v-5cb9a64e data-v-5cb9a64e>react hooks中主要的API使用</h3> <!----> <label id="box" class="inputBox" style="display:none;" data-v-5cb9a64e data-v-5cb9a64e><input type="password" value="" data-v-5cb9a64e> <span data-v-5cb9a64e>Konck! Knock!</span> <button data-v-5cb9a64e>OK</button></label> <div class="footer" style="display:none;" data-v-5cb9a64e data-v-5cb9a64e><span data-v-5cb9a64e><i class="iconfont reco-theme" data-v-5cb9a64e></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-5cb9a64e>vuePress-theme-reco</a></span> <span data-v-5cb9a64e><i class="iconfont reco-copyright" data-v-5cb9a64e></i> <a data-v-5cb9a64e><span data-v-5cb9a64e>银河系小仙女</span>
+            
+          <span data-v-5cb9a64e>2017 - </span>
+          2021
+        </a></span></div></div> <div data-v-0a66d9e0><main class="page" style="padding-right:0;"><div class="page-title" style="display:none;"><h1 class="title">react hooks中主要的API使用</h1> <div data-v-698a76ac><i class="iconfont reco-account" data-v-698a76ac><span data-v-698a76ac>银河系小仙女</span></i> <i class="iconfont reco-date" data-v-698a76ac><span data-v-698a76ac>2020-06-08</span></i> <!----> <i class="iconfont reco-tag tags" data-v-698a76ac><span class="tag-item" data-v-698a76ac>React</span></i></div></div> <div class="theme-reco-content content__default" style="display:none;"><p>什么是Hooks?
+hooks 是react 16.8 新增的特性，它允许你在不写class的情况下操作state 和react的其他特性。
+hooks 只是多了一种写组件的方法，使编写一个组件更简单更方便，同时可以自定义hook把公共的逻辑提取出来，让逻辑在多个组件之间共享。</p> <h2 id="接下来主要通过小demo来学习-hooks"><a href="#接下来主要通过小demo来学习-hooks" class="header-anchor">#</a> 接下来主要通过小demo来学习 Hooks：</h2> <h2 id="usestate-状态"><a href="#usestate-状态" class="header-anchor">#</a> useState：状态</h2> <p>示例如下：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code> //通过useState Hook 声明了一个新的state变量
+  const [count,setCount] = useState(0)
+  //这种js语法叫做数组解构，意味着我们同时创建了count和setCount两个变量
+  // count的值为useState返回的第一个值，setCount是返回的第二个值
+  //相当于以下代码：
+  // var countStateVariable = useState(0); // 返回一个有两个元素的数组
+  // var count = countStateVariable[0]; // 数组里的第一个值
+  // var setcount = countStateVariable[1]; // 数组里的第二个值
+
+  const [obj,setObj] = useState({name:'Ali'})
+  const [arr,setArr] = useState([1,2,3])
+  const [func,setFunc] = useState(()=&gt;{return {name:'ali'};})
+
+  return (
+    &lt;div&gt;
+      &lt;p&gt;{count}&lt;/p&gt;
+      {/*当用户点击按钮后，传递一个新的值给setCount，react会重新渲染App组件把最新的值传给它*/}
+      &lt;button onClick={()=&gt;setCount(count+1)}&gt;点我&lt;/button&gt;
+
+      &lt;p&gt;{obj.name}--{obj.age}&lt;/p&gt;
+      &lt;button onClick={()=&gt;setObj({name:'mini',age:17})}&gt;点我&lt;/button&gt;
+
+      &lt;p&gt;{arr}&lt;/p&gt;
+      &lt;button onClick={()=&gt;setArr([2,3,4])}&gt;点我&lt;/button&gt;
+
+      &lt;p&gt;{func.name}&lt;/p&gt;
+      {/*setFunc返回的也必须是同类型*/}
+      &lt;button onClick={()=&gt;setFunc(()=&gt;{return {name:'yli'}})}&gt;点我&lt;/button&gt;
+    &lt;/div&gt;
+  );
+}
+
+export default FunComp;
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br></div></div><p><strong>例子：点击按钮加一</strong> <strong>第一种写法：Class组件</strong></p> <div class="language- line-numbers-mode"><pre class="language-text"><code>import React from 'react'
+
+class  ClassComp extends React.Component{
+  state = {
+    count:0
+  }
+  render() {
+    const {count} = this.state
+    return(
+      &lt;div&gt;
+        &lt;p&gt;{count}&lt;/p&gt;
+        &lt;button onClick={()=&gt;this.setState({count:count+1})}&gt;点击加一&lt;/button&gt;
+      &lt;/div&gt;
+    )
+  }
+}
+export default ClassComp;
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br></div></div><p><strong>第二种写法：使用useState</strong></p> <div class="language- line-numbers-mode"><pre class="language-text"><code>import React,{useState} from 'react'//在函数组件中存储内部state
+
+function FunComp() {
+  const [count,setCount] = useState(0)
+
+  return (
+    &lt;div&gt;
+      &lt;p&gt;{count}&lt;/p&gt;
+      &lt;button onClick={()=&gt;setCount(count+1)}&gt;点击加一&lt;/button&gt;
+    &lt;/div&gt;
+  );
+}
+export default FunComp;
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br></div></div><h2 id="useeffect-副作用"><a href="#useeffect-副作用" class="header-anchor">#</a> useEffect：副作用</h2> <p>以下特点：
+1，看做 componentDidMount，componentDidUpdate 和 componentWillUnmount 这三个函数的组合
+2，副作用（DOM操作，数据请求，组件更新）
+3，采用闭包形式，在组件函数内部执行，因此可以获取props和state
+4，无阻塞更新
+5，useEffect(回调函数，数组(可不写))
+6，多个useEffect</p> <p><strong>例子：点击按钮自加一，且在count能被2整除时控制台输出当前的count</strong>
+第一种写法：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>import React from 'react'
+
+class  ClassComp extends React.Component{
+  state = {
+    count:0
+  }
+  componentDidMount() {//插入真实dom完成初始化渲染
+    if(this.state.count%2===0){
+      console.log(this.state.count)
+    }
+  }
+  componentDidUpdate() {//完成更新
+    if(this.state.count%2===0){
+      console.log(this.state.count)
+    }
+  }
+  render() {
+    const {count} = this.state
+    return(
+      &lt;div&gt;
+        &lt;p&gt;{count}&lt;/p&gt;
+        &lt;button onClick={()=&gt;this.setState({count:count+1})}&gt;点击加一&lt;/button&gt;
+      &lt;/div&gt;
+    )
+  }
+}
+export default ClassComp;
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br></div></div><p><strong>第二种写法：使用useEffect</strong></p> <div class="language- line-numbers-mode"><pre class="language-text"><code>import React,{useState,useEffect} from 'react'
+
+export default function FunComp() {
+  const [count, setCount] = useState(0);
+
+  //useEffect有二个参数：函数，数组[]代表的是能够引起副作用执行的依赖
+  useEffect(()=&gt;{
+    if(count%2===0){
+      console.log(count)
+    }
+  },
+    //如果不写第二个参数则默认只有通过useState Hook 声明了一个新的state变量发生变化都会调用此副作用函数
+    // []//只在组件中挂载时执行一次
+    [count]//每次count发生改变都会调用此副作用
+  )
+  return(
+      &lt;div&gt;
+        &lt;p&gt;{count}&lt;/p&gt;
+        &lt;button onClick={()=&gt;setCount(count+1)}&gt;点击加一&lt;/button&gt;
+      &lt;/div&gt;
+  )
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br></div></div><h2 id="usereducer-复杂的副作用处理"><a href="#usereducer-复杂的副作用处理" class="header-anchor">#</a> useReducer：复杂的副作用处理</h2> <div class="language- line-numbers-mode"><pre class="language-text"><code>import React,{useReducer} from 'react'
+
+export default function ReducerDemo() {
+  const initialState = {count: 0};
+  const reducer = (state,action) =&gt;{
+    switch (action.type) {
+      case 'increment':
+        return {count: state.count + action.payload};
+      case 'decrement':
+        return {count: state.count - 1};
+      default:
+        throw new Error();
+    }
+  }
+  const [state, dispatch] = useReducer(reducer, initialState);
+  return(
+    &lt;div&gt;
+      reducer {state.count}                                             
+                                             {/*{自加2}*/}
+      &lt;button onClick={() =&gt; dispatch({type: 'increment',payload:2})}&gt;+&lt;/button&gt;
+      &lt;button onClick={() =&gt; dispatch({type: 'decrement'})}&gt;-&lt;/button&gt;
+    &lt;/div&gt;
+  )
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br></div></div><h2 id="usecontext-深层状态传递"><a href="#usecontext-深层状态传递" class="header-anchor">#</a> useContext：深层状态传递</h2> <p>例子：父级给子级的子级传值
+<strong>第一种：通过最原始方法props逐层传递：</strong></p> <div class="language- line-numbers-mode"><pre class="language-text"><code>import React,{useState} from 'react'
+
+const Child = (props) =&gt; {
+  const style = {
+    backgroundColor:props.bgColor
+  }
+  return &lt;div style={style}&gt;Child&lt;/div&gt;
+}
+
+const Demo = (props) =&gt; {
+  const {bgColor} = props
+  return &lt;Child bgColor={bgColor}/&gt;
+}
+
+export default function UseContextDemo() {
+  const [bgColor,setBgColor] =useState('black')
+  return(
+    &lt;div&gt;
+      &lt;button onClick={()=&gt;setBgColor('pink')}&gt;换背景色&lt;/button&gt;
+      &lt;Demo bgColor={bgColor}/&gt;
+    &lt;/div&gt;
+  )
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br></div></div><p><strong>第二种:使用UseContext：</strong></p> <div class="language- line-numbers-mode"><pre class="language-text"><code>import React,{useState,useContext} from 'react'
+
+const themContext = React.createContext('black')
+
+const Child = () =&gt; {
+  const bgColor = useContext(themContext)
+  const style = {
+    backgroundColor:bgColor
+  }
+  return &lt;div style={style}&gt;Child&lt;/div&gt;
+}
+
+const Demo = () =&gt; {
+  return &lt;Child/&gt;
+}
+
+export default function UseContextDemo() {
+  const [bgColor,setBgColor] =useState('black')
+  return(
+    &lt;div&gt;
+      &lt;button onClick={()=&gt;setBgColor('pink')}&gt;换背景色&lt;/button&gt;
+      &lt;themContext.Provider value={bgColor}&gt;
+        &lt;Demo/&gt;
+      &lt;/themContext.Provider&gt;
+    &lt;/div&gt;
+  )
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br></div></div><h2 id="自定义hooks"><a href="#自定义hooks" class="header-anchor">#</a> 自定义Hooks</h2> <p>通过自定义 Hook，可以将组件逻辑提取到可重用的函数中
+自定义hooks-useCount代码：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>import React, {useEffect, useState} from &quot;react&quot;;
+
+export  default function useCount(){//自定义hook
+  const [count,setCount] = useState(0);
+  useEffect(()=&gt;{
+    setInterval(()=&gt;{
+      setCount(count =&gt; count + 1)
+    })
+  },[])
+  console.log(count)
+  return count;
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br></div></div><p><strong>组件内使用：</strong></p> <div class="language- line-numbers-mode"><pre class="language-text"><code>import React from &quot;react&quot;;
+import useCount from '../src/example/Hooks'
+
+export default () =&gt; {
+ const count = useCount()
+ return(
+   &lt;p&gt;{count}&lt;/p&gt;
+ )
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br></div></div><h2 id="useref-引用"><a href="#useref-引用" class="header-anchor">#</a> useRef：引用</h2> <p>例子：刷新输入框自动聚焦</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>import React, {useEffect, useRef} from &quot;react&quot;;
+
+function Input() {
+  const inputRef = useRef()
+
+  useEffect(()=&gt;{
+    inputRef.current.focus()
+  },[])
+
+  return &lt;input ref={inputRef}/&gt;
+}
+export default function RefDemo() {
+  return(
+    &lt;div&gt;
+      &lt;Input/&gt;
+    &lt;/div&gt;
+  )
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br></div></div><h2 id="usecallback-usemeno"><a href="#usecallback-usemeno" class="header-anchor">#</a> useCallback&amp;useMeno：</h2> <p>useCallback：一般使用在存储函数，它存储于函数体，当你的依赖不发生更改时，函数体也不会发生更改。
+useMeno：根据依赖来计算。</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>import React, {useState, useEffect, useCallback, useMemo} from 'react'
+
+export default function CallbackMemo() {
+  const [count,setCount] =useState(0)
+  const [otherCount,setOtherCount] =useState(0)
+  useEffect(()=&gt;{
+    setInterval(()=&gt;{
+      setOtherCount((otherCount)=&gt; otherCount + 1);
+    },30)
+    setInterval(()=&gt;{
+      setCount(count =&gt; count + 1)
+    },1000)
+  },[])//只执行一次
+  console.log('更新...')
+
+  //依赖不发生更改时，函数体也不会发生更改
+  // useCallback 将函数缓存起来 节流
+  const handleClick = useCallback((ev) =&gt;{
+    console.log(ev.target)
+  },[])
+
+  //const result = count * 100//当setCount和setOtherCount发生改变时都会执行这行代码，
+
+  //当其它状态更改时会触发了组件的更新，
+  // 但是我的这个值只依赖于某一个属性某一个状态时用useMemo
+  const result = useMemo(()=&gt;{
+    console.log('计算中.......')
+    return count * 100
+  },[count])//只依赖于count
+
+  return(
+    &lt;div onClick={handleClick}&gt;
+      {count} {otherCount} {result}
+    &lt;/div&gt;
+  )
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br></div></div><p>以上是近期学习Hooks的一些笔记代码整理~</p></div> <footer class="page-edit" style="display:none;"><!----> <!----></footer> <!----> <!----> <!----></main> <!----></div></div></div></div><div class="global-ui"><div class="back-to-ceiling" style="right:1rem;bottom:6rem;width:2.5rem;height:2.5rem;border-radius:.25rem;line-height:2.5rem;display:none;" data-v-c6073ba8 data-v-c6073ba8><svg t="1574745035067" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5404" class="icon" data-v-c6073ba8><path d="M526.60727968 10.90185116a27.675 27.675 0 0 0-29.21455937 0c-131.36607665 82.28402758-218.69155461 228.01873535-218.69155402 394.07834331a462.20625001 462.20625001 0 0 0 5.36959153 69.94390903c1.00431239 6.55289093-0.34802892 13.13561351-3.76865779 18.80351572-32.63518765 54.11355614-51.75690182 118.55860487-51.7569018 187.94566865a371.06718723 371.06718723 0 0 0 11.50484808 91.98906777c6.53300375 25.50556257 41.68394495 28.14064038 52.69160883 4.22606766 17.37162448-37.73630017 42.14135425-72.50938081 72.80769204-103.21549295 2.18761121 3.04276886 4.15646224 6.24463696 6.40373557 9.22774369a1871.4375 1871.4375 0 0 0 140.04691725 5.34970492 1866.36093723 1866.36093723 0 0 0 140.04691723-5.34970492c2.24727335-2.98310674 4.21612437-6.18497483 6.3937923-9.2178004 30.66633723 30.70611158 55.4360664 65.4791928 72.80769147 103.21549355 11.00766384 23.91457269 46.15860503 21.27949489 52.69160879-4.22606768a371.15156223 371.15156223 0 0 0 11.514792-91.99901164c0-69.36717486-19.13165746-133.82216804-51.75690182-187.92578088-3.42062944-5.66790279-4.76302748-12.26056868-3.76865837-18.80351632a462.20625001 462.20625001 0 0 0 5.36959269-69.943909c-0.00994388-166.08943902-87.32547796-311.81420293-218.6915546-394.09823051zM605.93803103 357.87693858a93.93749974 93.93749974 0 1 1-187.89594924 6.1e-7 93.93749974 93.93749974 0 0 1 187.89594924-6.1e-7z" p-id="5405" data-v-c6073ba8></path><path d="M429.50777625 765.63860547C429.50777625 803.39355007 466.44236686 1000.39046097 512.00932183 1000.39046097c45.56695499 0 82.4922232-197.00623328 82.5015456-234.7518555 0-37.75494459-36.9345906-68.35043303-82.4922232-68.34111062-45.57627738-0.00932239-82.52019037 30.59548842-82.51086798 68.34111062z" p-id="5406" data-v-c6073ba8></path></svg></div></div></div>
+    <script src="/hu-blog/assets/js/app.b0c7be0c.js" defer></script><script src="/hu-blog/assets/js/3.f266843b.js" defer></script><script src="/hu-blog/assets/js/1.b0595a68.js" defer></script><script src="/hu-blog/assets/js/16.fb8a249e.js" defer></script>
+  </body>
+</html>

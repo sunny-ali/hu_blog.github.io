@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>在react中使用redux和react-redux | 银河系小仙女的博客</title>
+    <meta name="generator" content="VuePress 1.5.4">
+    <link rel="icon" href="/hu-blog/avatar.png">
+    <meta name="description" content="欢迎来到我的博客~">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    <link rel="preload" href="/hu-blog/assets/css/0.styles.c9c547b8.css" as="style"><link rel="preload" href="/hu-blog/assets/js/app.b0c7be0c.js" as="script"><link rel="preload" href="/hu-blog/assets/js/3.f266843b.js" as="script"><link rel="preload" href="/hu-blog/assets/js/1.b0595a68.js" as="script"><link rel="preload" href="/hu-blog/assets/js/15.d7b4cef4.js" as="script"><link rel="prefetch" href="/hu-blog/assets/js/10.a850a7fe.js"><link rel="prefetch" href="/hu-blog/assets/js/11.ed75528f.js"><link rel="prefetch" href="/hu-blog/assets/js/12.dbca3a6a.js"><link rel="prefetch" href="/hu-blog/assets/js/13.d88008dd.js"><link rel="prefetch" href="/hu-blog/assets/js/14.b2fe0e41.js"><link rel="prefetch" href="/hu-blog/assets/js/16.fb8a249e.js"><link rel="prefetch" href="/hu-blog/assets/js/17.25a122c0.js"><link rel="prefetch" href="/hu-blog/assets/js/18.e96e4649.js"><link rel="prefetch" href="/hu-blog/assets/js/19.b770e4c4.js"><link rel="prefetch" href="/hu-blog/assets/js/20.c8a2a9ed.js"><link rel="prefetch" href="/hu-blog/assets/js/21.edf943fd.js"><link rel="prefetch" href="/hu-blog/assets/js/22.d0f5f49d.js"><link rel="prefetch" href="/hu-blog/assets/js/23.52b9afe7.js"><link rel="prefetch" href="/hu-blog/assets/js/24.cacd1b73.js"><link rel="prefetch" href="/hu-blog/assets/js/25.9b6ba6dc.js"><link rel="prefetch" href="/hu-blog/assets/js/26.9e2296f2.js"><link rel="prefetch" href="/hu-blog/assets/js/27.cd8b445e.js"><link rel="prefetch" href="/hu-blog/assets/js/28.5a6ff905.js"><link rel="prefetch" href="/hu-blog/assets/js/29.ef264e9e.js"><link rel="prefetch" href="/hu-blog/assets/js/30.1baaf0a7.js"><link rel="prefetch" href="/hu-blog/assets/js/31.5f8cb009.js"><link rel="prefetch" href="/hu-blog/assets/js/32.392ce629.js"><link rel="prefetch" href="/hu-blog/assets/js/33.aee9a053.js"><link rel="prefetch" href="/hu-blog/assets/js/34.46f640c4.js"><link rel="prefetch" href="/hu-blog/assets/js/35.d71f2585.js"><link rel="prefetch" href="/hu-blog/assets/js/36.cd95f373.js"><link rel="prefetch" href="/hu-blog/assets/js/37.667255ea.js"><link rel="prefetch" href="/hu-blog/assets/js/38.79157103.js"><link rel="prefetch" href="/hu-blog/assets/js/39.9910a37d.js"><link rel="prefetch" href="/hu-blog/assets/js/4.1c11a1b7.js"><link rel="prefetch" href="/hu-blog/assets/js/40.5d97c4e9.js"><link rel="prefetch" href="/hu-blog/assets/js/41.a491c0d7.js"><link rel="prefetch" href="/hu-blog/assets/js/42.4c1ab43b.js"><link rel="prefetch" href="/hu-blog/assets/js/43.2ab44d3e.js"><link rel="prefetch" href="/hu-blog/assets/js/44.245b6077.js"><link rel="prefetch" href="/hu-blog/assets/js/45.23096874.js"><link rel="prefetch" href="/hu-blog/assets/js/46.449ce78b.js"><link rel="prefetch" href="/hu-blog/assets/js/47.7b1c5f56.js"><link rel="prefetch" href="/hu-blog/assets/js/48.8e1bb5a7.js"><link rel="prefetch" href="/hu-blog/assets/js/49.bee0e339.js"><link rel="prefetch" href="/hu-blog/assets/js/5.042c8719.js"><link rel="prefetch" href="/hu-blog/assets/js/50.d9bda4b6.js"><link rel="prefetch" href="/hu-blog/assets/js/51.3360d877.js"><link rel="prefetch" href="/hu-blog/assets/js/52.ad63f355.js"><link rel="prefetch" href="/hu-blog/assets/js/6.594033ef.js"><link rel="prefetch" href="/hu-blog/assets/js/7.3d140258.js"><link rel="prefetch" href="/hu-blog/assets/js/8.73a3b83b.js"><link rel="prefetch" href="/hu-blog/assets/js/9.e5b46449.js">
+    <link rel="stylesheet" href="/hu-blog/assets/css/0.styles.c9c547b8.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container no-sidebar" data-v-0a66d9e0><div data-v-0a66d9e0><div id="loader-wrapper" class="loading-wrapper" data-v-d48f4d20 data-v-0a66d9e0 data-v-0a66d9e0><div class="loader-main" data-v-d48f4d20><div data-v-d48f4d20></div><div data-v-d48f4d20></div><div data-v-d48f4d20></div><div data-v-d48f4d20></div></div> <!----> <!----></div> <div class="password-shadow password-wrapper-out" style="display:none;" data-v-5cb9a64e data-v-0a66d9e0 data-v-0a66d9e0><h3 class="title" style="display:none;" data-v-5cb9a64e data-v-5cb9a64e>银河系小仙女的博客</h3> <!----> <label id="box" class="inputBox" style="display:none;" data-v-5cb9a64e data-v-5cb9a64e><input type="password" value="" data-v-5cb9a64e> <span data-v-5cb9a64e>Konck! Knock!</span> <button data-v-5cb9a64e>OK</button></label> <div class="footer" style="display:none;" data-v-5cb9a64e data-v-5cb9a64e><span data-v-5cb9a64e><i class="iconfont reco-theme" data-v-5cb9a64e></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-5cb9a64e>vuePress-theme-reco</a></span> <span data-v-5cb9a64e><i class="iconfont reco-copyright" data-v-5cb9a64e></i> <a data-v-5cb9a64e><span data-v-5cb9a64e>银河系小仙女</span>
+            
+          <span data-v-5cb9a64e>2017 - </span>
+          2021
+        </a></span></div></div> <div class="hide" data-v-0a66d9e0><header class="navbar" data-v-0a66d9e0><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/hu-blog/" class="home-link router-link-active"><!----> <span class="site-name">银河系小仙女的博客</span></a> <div class="links"><div class="color-picker"><a class="color-button"><i class="iconfont reco-color"></i></a> <div class="color-picker-menu" style="display:none;"><div class="mode-options"><h4 class="title">Choose mode</h4> <ul class="color-mode-options"><li class="dark">dark</li><li class="auto active">auto</li><li class="light">light</li></ul></div></div></div> <div class="search-box"><i class="iconfont reco-search"></i> <input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/hu-blog/" class="nav-link"><i class="iconfont reco-home"></i>
+  主页
+</a></div><div class="nav-item"><a href="/hu-blog/timeline/" class="nav-link"><i class="iconfont reco-date"></i>
+  时光轴
+</a></div><div class="nav-item"><a href="/hu-blog/tag/" class="nav-link"><i class="iconfont reco-tag"></i>
+  标签
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-message"></i>
+      分类
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/hu-blog/blogs/lifes/" class="nav-link"><i class="iconfont undefined"></i>
+  myLive
+</a></li><li class="dropdown-item"><!----> <a href="/hu-blog/blogs/前端笔记/" class="nav-link"><i class="iconfont undefined"></i>
+  web
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-message"></i>
+      关于
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://blog.csdn.net/weixin_44824839" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-csdn"></i>
+  CSDN
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="https://github.com/sunny-ali" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-github"></i>
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="https://gitee.com/maryu" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-mayun"></i>
+  码云
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask" data-v-0a66d9e0></div> <aside class="sidebar" data-v-0a66d9e0><div class="personal-info-wrapper" data-v-03833281 data-v-0a66d9e0><img src="/hu-blog/avatar.png" alt="author-avatar" class="personal-img" data-v-03833281> <h3 class="name" data-v-03833281>
+    银河系小仙女
+  </h3> <div class="num" data-v-03833281><div data-v-03833281><h3 data-v-03833281>37</h3> <h6 data-v-03833281>文章</h6></div> <div data-v-03833281><h3 data-v-03833281>13</h3> <h6 data-v-03833281>标签</h6></div></div> <hr data-v-03833281></div> <nav class="nav-links"><div class="nav-item"><a href="/hu-blog/" class="nav-link"><i class="iconfont reco-home"></i>
+  主页
+</a></div><div class="nav-item"><a href="/hu-blog/timeline/" class="nav-link"><i class="iconfont reco-date"></i>
+  时光轴
+</a></div><div class="nav-item"><a href="/hu-blog/tag/" class="nav-link"><i class="iconfont reco-tag"></i>
+  标签
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-message"></i>
+      分类
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/hu-blog/blogs/lifes/" class="nav-link"><i class="iconfont undefined"></i>
+  myLive
+</a></li><li class="dropdown-item"><!----> <a href="/hu-blog/blogs/前端笔记/" class="nav-link"><i class="iconfont undefined"></i>
+  web
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-message"></i>
+      关于
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://blog.csdn.net/weixin_44824839" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-csdn"></i>
+  CSDN
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="https://github.com/sunny-ali" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-github"></i>
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="https://gitee.com/maryu" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-mayun"></i>
+  码云
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></div></div> <!----></nav> <!----> </aside> <div class="password-shadow password-wrapper-in" style="display:none;" data-v-5cb9a64e data-v-0a66d9e0><h3 class="title" style="display:none;" data-v-5cb9a64e data-v-5cb9a64e>在react中使用redux和react-redux</h3> <!----> <label id="box" class="inputBox" style="display:none;" data-v-5cb9a64e data-v-5cb9a64e><input type="password" value="" data-v-5cb9a64e> <span data-v-5cb9a64e>Konck! Knock!</span> <button data-v-5cb9a64e>OK</button></label> <div class="footer" style="display:none;" data-v-5cb9a64e data-v-5cb9a64e><span data-v-5cb9a64e><i class="iconfont reco-theme" data-v-5cb9a64e></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-5cb9a64e>vuePress-theme-reco</a></span> <span data-v-5cb9a64e><i class="iconfont reco-copyright" data-v-5cb9a64e></i> <a data-v-5cb9a64e><span data-v-5cb9a64e>银河系小仙女</span>
+            
+          <span data-v-5cb9a64e>2017 - </span>
+          2021
+        </a></span></div></div> <div data-v-0a66d9e0><main class="page" style="padding-right:0;"><div class="page-title" style="display:none;"><h1 class="title">在react中使用redux和react-redux</h1> <div data-v-698a76ac><i class="iconfont reco-account" data-v-698a76ac><span data-v-698a76ac>银河系小仙女</span></i> <i class="iconfont reco-date" data-v-698a76ac><span data-v-698a76ac>2020-06-08</span></i> <!----> <i class="iconfont reco-tag tags" data-v-698a76ac><span class="tag-item" data-v-698a76ac>React</span></i></div></div> <div class="theme-reco-content content__default" style="display:none;"><h1 id="在react中使用redux"><a href="#在react中使用redux" class="header-anchor">#</a> 在react中使用redux</h1> <p><strong>redux是什么？</strong></p> <ol><li>redux是一个独立专门用于做状态管理的JS库(不是react插件库)</li> <li>它可以用在react，angular，vue等项目中，但基本与react配合使用</li> <li>作用：集中式管理react应用中的多个组件共享的状态
+redux工作流程：
+<img src="https://img-blog.csdnimg.cn/20200608143743498.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDgyNDgzOQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></li></ol> <p><strong>什么情况下需要使用redux</strong></p> <ol><li>总体原则：能不用就不用</li> <li>某个组件的状态需要共享</li> <li>某个状态需要在任何地方都可以拿到</li> <li>一个组件需要改变全局状态</li> <li>一个组件需要改变另一个组件的状态</li></ol> <h1 id="redux的核心api"><a href="#redux的核心api" class="header-anchor">#</a> redux的核心API</h1> <h2 id="createstore"><a href="#createstore" class="header-anchor">#</a> createStore()</h2> <p>作用：创建包含指定reducer的对象
+编码：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>import {createStore} from 'redux'
+import counter from './reducers/counter'
+const store = createStore(counter)
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><h2 id="store对象"><a href="#store对象" class="header-anchor">#</a> store对象：</h2> <p>作用：redux库最核心的管理对象
+它的内部维护着：state，reducer
+核心方法：
+<strong>getState()
+dispatch(action)
+subscribe(listener)</strong>
+编码：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code> store.getState()
+store.dispatch({type:'INCREMENT', number})
+store.subscribe(render)
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><h2 id="applymiddleware"><a href="#applymiddleware" class="header-anchor">#</a> applyMiddleware()</h2> <p>作用：应用上基于redux的中间件(插件库)
+编码：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>import {createStore, applyMiddleware} from 'redux'
+import thunk from 'redux-thunk'  // redux异步中间件
+const store = createStore(
+  counter,
+  applyMiddleware(thunk) // 应用上异步中间件
+)
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br></div></div><h2 id="combinereducers"><a href="#combinereducers" class="header-anchor">#</a> combineReducers()</h2> <p>作用：合并多个reducer函数
+编码：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>export default combineReducers({
+  user,
+  chatUser,
+  chat
+})
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><h1 id="redux的三个核心概念"><a href="#redux的三个核心概念" class="header-anchor">#</a> redux的三个核心概念</h1> <h2 id="action"><a href="#action" class="header-anchor">#</a> action</h2> <p>：标识要执行行为的对象；包含2个方面的属性：
+type:标识属性，值为字符串，唯一，必要属性
+xxx：数据属性，值类型任意，可选属性
+例子：
+<code>const action = { 		type: 'INCREMENT', 			 data: 2 		 }</code>
+Action Creator(创建Action的工厂函数)
+const increment = (number) =&gt; ({type: 'INCREMENT', data: number})</p> <h1 id="reducer"><a href="#reducer" class="header-anchor">#</a> reducer：</h1> <p>根据旧的state和action, 产生新的state的纯函数
+样例</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>export default function counter(state = 0, action) {
+		  switch (action.type) {
+		    case 'INCREMENT':
+		      return state + action.data
+		    case 'DECREMENT':
+		      return state - action.data
+		    default:
+		      return state
+		  }
+		}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br></div></div><p>注意：返回一个新的状态，不要修改原来的状态</p> <h2 id="store"><a href="#store" class="header-anchor">#</a> <strong>store：</strong></h2> <p>将state，action与reducer联系在一起的对象
+得到此对象：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>        import {createStore} from 'redux'
+		import reducer from './reducers'
+		const store = createStore(reducer)
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><p>此对象的功能：
+getState(): 得到state
+dispatch(action): 分发action, 触发reducer调用, 产生新的state
+subscribe(listener): 注册监听, 当产生了新的state时, 自动调用</p> <h1 id="使用redux编写应用"><a href="#使用redux编写应用" class="header-anchor">#</a> 使用redux编写应用：</h1> <p>下载依赖包：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>npm install --save redux
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>redux/action-type.js</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>/*
+Action对象的type常量名称模块
+ */
+export const INCREMENT = 'increment'
+export const DECREMENT = 'decrement'
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br></div></div><p>redux/action.js</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>/*
+action creator模块
+ */
+import {INCREMENT, DECREMENT} from './action-types'
+
+export const increment = number =&gt; ({type: INCREMENT, number})
+export const decrement = number =&gt; ({type: DECREMENT, number})
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br></div></div><p>redux/reducers.js</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>// 根据老的state和指定action，处理返回一个新的state
+import {INCREMENT,DECREMENT} from &quot;./action-types&quot;;
+export function counter(state=0,action) {
+  console.log('counter',state,action)
+  switch (action.type) {
+    case INCREMENT:
+      return state + action.number
+    case DECREMENT:
+      return state - action.number
+    default:
+      return state
+  }
+}
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br></div></div><p>index.js</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>import React from 'react';
+import ReactDOM from 'react-dom';
+import {createStore} from 'redux'
+import App from './components/App';
+import {counter} from './redux/reducers'
+
+//根据counter函数创建store对象
+const store = createStore(counter)
+// 定义渲染根组件标签的函数
+const render = () =&gt; {
+  ReactDOM.render(
+    &lt;App store={store}/&gt;,
+    document.getElementById('root')
+  )
+}
+// 初始化渲染
+render()
+
+//注册（订阅）监听，一旦状态发生改变，自动重新渲染
+store.subscribe(render)
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br></div></div><p>components/App.js
+首先需要下载 props-types依赖包</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>npm install --save props-types
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><div class="language- line-numbers-mode"><pre class="language-text"><code>/*
+应用组件
+ */
+import React, {Component} from 'react'
+import PropTypes from 'prop-types'
+import * as actions from '../redux/actions'
+
+export default class App extends Component {
+
+  static propTypes = {
+    store: PropTypes.object.isRequired,
+  }
+
+  increment = () =&gt; {
+    const number = this.refs.numSelect.value * 1
+    this.props.store.dispatch(actions.increment(number))
+  }
+
+  decrement = () =&gt; {
+    const number = this.refs.numSelect.value * 1
+    this.props.store.dispatch(actions.decrement(number))
+  }
+
+  incrementIfOdd = () =&gt; {
+    const number = this.refs.numSelect.value * 1
+
+    let count = this.props.store.getState()
+    if (count % 2 === 1) {
+      this.props.store.dispatch(actions.increment(number))
+    }
+  }
+
+  incrementAsync = () =&gt; {
+    const number = this.refs.numSelect.value * 1
+    setTimeout(() =&gt; {
+      this.props.store.dispatch(actions.increment(number))
+    }, 1000)
+  }
+
+  render() {
+    return (
+      &lt;div&gt;
+        &lt;p&gt;
+          click {this.props.store.getState()} times {' '}
+        &lt;/p&gt;
+        &lt;select ref=&quot;numSelect&quot;&gt;
+          &lt;option value=&quot;1&quot;&gt;1&lt;/option&gt;
+          &lt;option value=&quot;2&quot;&gt;2&lt;/option&gt;
+          &lt;option value=&quot;3&quot;&gt;3&lt;/option&gt;
+        &lt;/select&gt;{' '}
+        &lt;button onClick={this.increment}&gt;+&lt;/button&gt;
+        {' '}
+        &lt;button onClick={this.decrement}&gt;-&lt;/button&gt;
+        {' '}
+        &lt;button onClick={this.incrementIfOdd}&gt;increment if odd&lt;/button&gt;
+        {' '}
+        &lt;button onClick={this.incrementAsync}&gt;increment async&lt;/button&gt;
+      &lt;/div&gt;
+    )
+  }
+}
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br><span class="line-number">57</span><br><span class="line-number">58</span><br><span class="line-number">59</span><br><span class="line-number">60</span><br><span class="line-number">61</span><br><span class="line-number">62</span><br></div></div><p>问题：redux与react组件的代码耦合度太高，编码不够简洁</p> <h2 id="react-reudx"><a href="#react-reudx" class="header-anchor">#</a> react-reudx</h2> <div class="language- extra-class"><pre><code>一个react插件库，专门用来简化react应用中使用redux
+</code></pre></div><p>将所有组件分为两大类：
+UI组件：</p> <ul><li><p>只负责UI的呈现，不带有任何业务逻辑</p></li> <li><p>通过props接受数据（一般数据和函数）</p></li> <li><p>不使用任何redux的API</p></li> <li><p>一般保存在components文件夹中</p></li> <li><p>List item</p></li></ul> <p>容器组件：</p> <p>负责管理数据和业务逻辑，不负责UI呈现</p> <ul><li>使用redux的API</li> <li>一般保存在containers文件夹下</li></ul> <p>相关的API：</p> <h2 id="provider"><a href="#provider" class="header-anchor">#</a> Provider：</h2> <p>让所有组件都可以得到state数据</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>&lt;Provider store={store}&gt;
+      &lt;App/&gt;
+    &lt;/Provider&gt;
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><h2 id="connect"><a href="#connect" class="header-anchor">#</a> connect()：</h2> <p>用于包装UI组件生成容器组件（将组件与react-redux连接起来）</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>import {connect} from 'react-redux'
+//引入action函数
+connect(
+  mapStateToProps,//映射状态成为属性，是一个函数返回的是一个对象
+  mapDispatchToProps,//是一个对象，返回的是一个action方法。最终会转化为dispatch调用的一个函数
+)(Counter)
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br></div></div><h2 id="mapstatetoprops"><a href="#mapstatetoprops" class="header-anchor">#</a> mapStateToprops()</h2> <p>将外部的数据(即state对象)转换为UI组件的标签属性</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>const mapStateToprops = function (state) {
+  return {
+    value: state
+  }
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><h2 id="mapdispatchtoprops"><a href="#mapdispatchtoprops" class="header-anchor">#</a> mapDispatchToProps()</h2> <p>将分发action的函数转换为UI组件的标签属性
+简洁语法可以直接指定为actions对象或包含多个action方法</p> <h1 id="使用react-redux"><a href="#使用react-redux" class="header-anchor">#</a> 使用react-redux</h1> <p>1，npm install --save react-redux
+2，redux/action-types.js不变
+3，redux/action.js不变
+4，redux/reducers.js不变
+5，containers/App.jsx</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>// 包含Counter组件的容器组件
+import React from &quot;react&quot;;
+//引入连接函数
+import {connect} from 'react-redux'
+//引入action函数
+import {increment,decrement} from &quot;../redux/actions&quot;;
+
+import Counter from &quot;../components/Counter&quot;;
+
+
+//向外暴露连接App组件的包装组件
+export default connect(
+  state =&gt;({count: state}),//是一个函数
+  {increment,decrement}
+)(Counter)
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br></div></div><p>6，components/Counter.jsx</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>/*
+应用组件
+ */
+import React, {Component} from 'react'
+import PropTypes from 'prop-types'
+// import * as actions from '../redux/actions'
+
+export default class Counter extends Component {
+
+  static propTypes = {
+    // store: PropTypes.object.isRequired,
+    count: PropTypes.number.isRequired,
+    increment: PropTypes.func.isRequired,
+    decrement: PropTypes.func.isRequired
+  }
+
+  increment = () =&gt; {
+    const number = this.refs.numSelect.value * 1
+    // this.props.store.dispatch(actions.increment(number))
+    this.props.increment(number)
+  }
+
+  decrement = () =&gt; {
+    const number = this.refs.numSelect.value * 1
+    // this.props.store.dispatch(actions.decrement(number))
+    this.props.decrement(number)
+  }
+
+  incrementIfOdd = () =&gt; {
+    const number = this.refs.numSelect.value * 1
+
+    // let count = this.props.store.getState()
+    let count = this.props.count
+    if (count % 2 === 1) {
+      // this.props.store.dispatch(actions.increment(number))
+      this.props.increment(number)
+    }
+  }
+
+  incrementAsync = () =&gt; {
+    const number = this.refs.numSelect.value * 1
+    setTimeout(() =&gt; {
+      // this.props.store.dispatch(actions.increment(number))
+      this.props.increment(number)
+    }, 1000)
+  }
+
+  render() {
+    return (
+      &lt;div&gt;
+        &lt;p&gt;
+          click {this.props.count} times {' '}
+        &lt;/p&gt;
+        &lt;select ref=&quot;numSelect&quot;&gt;
+          &lt;option value=&quot;1&quot;&gt;1&lt;/option&gt;
+          &lt;option value=&quot;2&quot;&gt;2&lt;/option&gt;
+          &lt;option value=&quot;3&quot;&gt;3&lt;/option&gt;
+        &lt;/select&gt;{' '}
+        &lt;button onClick={this.increment}&gt;+&lt;/button&gt;
+        {' '}
+        &lt;button onClick={this.decrement}&gt;-&lt;/button&gt;
+        {' '}
+        &lt;button onClick={this.incrementIfOdd}&gt;increment if odd&lt;/button&gt;
+        {' '}
+        &lt;button onClick={this.incrementAsync}&gt;increment async&lt;/button&gt;
+      &lt;/div&gt;
+    )
+  }
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br><span class="line-number">57</span><br><span class="line-number">58</span><br><span class="line-number">59</span><br><span class="line-number">60</span><br><span class="line-number">61</span><br><span class="line-number">62</span><br><span class="line-number">63</span><br><span class="line-number">64</span><br><span class="line-number">65</span><br><span class="line-number">66</span><br><span class="line-number">67</span><br><span class="line-number">68</span><br><span class="line-number">69</span><br></div></div></div> <footer class="page-edit" style="display:none;"><!----> <!----></footer> <!----> <!----> <!----></main> <!----></div></div></div></div><div class="global-ui"><div class="back-to-ceiling" style="right:1rem;bottom:6rem;width:2.5rem;height:2.5rem;border-radius:.25rem;line-height:2.5rem;display:none;" data-v-c6073ba8 data-v-c6073ba8><svg t="1574745035067" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5404" class="icon" data-v-c6073ba8><path d="M526.60727968 10.90185116a27.675 27.675 0 0 0-29.21455937 0c-131.36607665 82.28402758-218.69155461 228.01873535-218.69155402 394.07834331a462.20625001 462.20625001 0 0 0 5.36959153 69.94390903c1.00431239 6.55289093-0.34802892 13.13561351-3.76865779 18.80351572-32.63518765 54.11355614-51.75690182 118.55860487-51.7569018 187.94566865a371.06718723 371.06718723 0 0 0 11.50484808 91.98906777c6.53300375 25.50556257 41.68394495 28.14064038 52.69160883 4.22606766 17.37162448-37.73630017 42.14135425-72.50938081 72.80769204-103.21549295 2.18761121 3.04276886 4.15646224 6.24463696 6.40373557 9.22774369a1871.4375 1871.4375 0 0 0 140.04691725 5.34970492 1866.36093723 1866.36093723 0 0 0 140.04691723-5.34970492c2.24727335-2.98310674 4.21612437-6.18497483 6.3937923-9.2178004 30.66633723 30.70611158 55.4360664 65.4791928 72.80769147 103.21549355 11.00766384 23.91457269 46.15860503 21.27949489 52.69160879-4.22606768a371.15156223 371.15156223 0 0 0 11.514792-91.99901164c0-69.36717486-19.13165746-133.82216804-51.75690182-187.92578088-3.42062944-5.66790279-4.76302748-12.26056868-3.76865837-18.80351632a462.20625001 462.20625001 0 0 0 5.36959269-69.943909c-0.00994388-166.08943902-87.32547796-311.81420293-218.6915546-394.09823051zM605.93803103 357.87693858a93.93749974 93.93749974 0 1 1-187.89594924 6.1e-7 93.93749974 93.93749974 0 0 1 187.89594924-6.1e-7z" p-id="5405" data-v-c6073ba8></path><path d="M429.50777625 765.63860547C429.50777625 803.39355007 466.44236686 1000.39046097 512.00932183 1000.39046097c45.56695499 0 82.4922232-197.00623328 82.5015456-234.7518555 0-37.75494459-36.9345906-68.35043303-82.4922232-68.34111062-45.57627738-0.00932239-82.52019037 30.59548842-82.51086798 68.34111062z" p-id="5406" data-v-c6073ba8></path></svg></div></div></div>
+    <script src="/hu-blog/assets/js/app.b0c7be0c.js" defer></script><script src="/hu-blog/assets/js/3.f266843b.js" defer></script><script src="/hu-blog/assets/js/1.b0595a68.js" defer></script><script src="/hu-blog/assets/js/15.d7b4cef4.js" defer></script>
+  </body>
+</html>
